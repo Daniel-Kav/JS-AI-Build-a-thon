@@ -137,6 +137,8 @@ _ReSharper*/
 # TeamCity is a build add-in
 _TeamCity*
 
+.env
+
 # DotCover is a Code Coverage Tool
 *.dotCover
 
