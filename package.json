@@ -24,6 +24,7 @@
     "@mistralai/mistralai": "^1.7.2",
     "dotenv": "^16.5.0",
     "openai": "^5.5.1",
+    "pdf-parse": "^1.1.1",
     "sharp": "^0.34.2"
   },
   "type": "module"
