@@ -1,11 +1,15 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { z } from "zod";
 import * as os from "os";
 
+// Create server instance
 const server = new McpServer({
     name: "node-os-mcp",
     description: "A server that provides tools to get information about the operating system.",
     version: "0.0.1",
 });
+
+
 
 server.tool(
 "cpu_average_usage",
