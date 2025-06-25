@@ -411,3 +411,5 @@ FodyWeavers.xsd
 # Environment variables
 .env
 .azure
+
+!agent/
