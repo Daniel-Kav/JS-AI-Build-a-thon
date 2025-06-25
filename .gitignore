@@ -289,10 +289,12 @@ FakesAssemblies/
 # Node.js Tools for Visual Studio
 .ntvs_analysis.dat
 node_modules/
-# Track these directories
+
+# Track these directories
 !packages/
 !webapi/
 !webapp/
+!node-os-mcp/
 
 # Visual Studio 6 build log
 *.plg
