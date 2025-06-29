@@ -2,18 +2,18 @@ import { css } from 'lit';
 
 export const chatStyle = css`
   :host {
-    --c-primary: #123f58;
-    --c-secondary: #f5f5f5;
+    --c-primary: #14532d;
+    --c-secondary: #e6f4ea;
     --c-text: var(--c-primary);
     --c-white: #fff;
     --c-black: #111111;
     --c-red: #ff0000;
-    --c-light-gray: #e3e3e3;
+    --c-light-gray: #c7e8ca;
     --c-base-gray: var(--c-secondary);
-    --c-dark-gray: #4e5288;
-    --c-accent-high: #692b61;
-    --c-accent-dark: #5e3c7d;
-    --c-accent-light: #f6d5f2;
+    --c-dark-gray: #388e3c;
+    --c-accent-high: #43a047;
+    --c-accent-dark: #2e7d32;
+    --c-accent-light: #a5d6a7;
     --c-error: #8a0000;
     --c-error-background: rgb(253, 231, 233);
     --c-success: #26b32b;

@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="Azure OpenAI JavaScript Chat Sample" />
     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
-    <title>OpenAI Chat App JavaScript</title>
+    <title>Climate Action Assistant</title>
   </head>
   <body>
     <main class="chat__main">
-      <h1>Welcome to this Azure OpenAI JavaScript Chat Sample</h1>
+      <h1>Welcome to the Climate Action Assistant</h1>
       <!-- When using this sample chat app as part of an existing app, you only need the section below. 
         However, you will need to replace the data-attribute values hardcoded in the chat-component tag with your own data-binded values.
       -->
       <section class="chat__container">
         <chat-component
-            title="Ask anything or try an example"
+            title="Ask about climate action or try an example"
             data-input-position="sticky"
             data-interaction-model="chat"
             data-api-url="%VITE_SEARCH_API_URI%"
             data-use-stream="true"
             data-approach="rrr"
             data-overrides="{&quot;retrieval_mode&quot;:&quot;hybrid&quot;,&quot;top&quot;:3,&quot;semantic_ranker&quot;:true,&quot;semantic_captions&quot;:false,&quot;exclude_category&quot;:&quot;&quot;,&quot;prompt_template&quot;:&quot;&quot;,&quot;prompt_template_prefix&quot;:&quot;&quot;,&quot;prompt_template_suffix&quot;:&quot;&quot;,&quot;suggest_followup_questions&quot;:true}"
-            data-custom-styles="{&quot;AccentHigh&quot;:&quot;#692b61&quot;,&quot;AccentLight&quot;:&quot;#f6d5f2&quot;,&quot;AccentDark&quot;:&quot;#5e3c7d&quot;,&quot;TextColor&quot;:&quot;#123f58&quot;,&quot;BackgroundColor&quot;:&quot;#e3e3e3&quot;,&quot;ForegroundColor&quot;:&quot;#4e5288&quot;,&quot;FormBackgroundColor&quot;:&quot;#f5f5f5&quot;,&quot;BorderRadius&quot;:&quot;10px&quot;,&quot;BorderWidth&quot;:&quot;3px&quot;,&quot;FontBaseSize&quot;:&quot;14px&quot;}"
+            data-custom-styles="{&quot;AccentHigh&quot;:&quot;#43a047&quot;,&quot;AccentLight&quot;:&quot;#a5d6a7&quot;,&quot;AccentDark&quot;:&quot;#2e7d32&quot;,&quot;TextColor&quot;:&quot;#14532d&quot;,&quot;BackgroundColor&quot;:&quot;#e6f4ea&quot;,&quot;ForegroundColor&quot;:&quot;#388e3c&quot;,&quot;FormBackgroundColor&quot;:&quot;#f5fff7&quot;,&quot;BorderRadius&quot;:&quot;10px&quot;,&quot;BorderWidth&quot;:&quot;3px&quot;,&quot;FontBaseSize&quot;:&quot;14px&quot;}"
             data-custom-branding="true"
             data-theme="light"
           ></chat-component>

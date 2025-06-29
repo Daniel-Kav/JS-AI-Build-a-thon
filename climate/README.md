@@ -1,12 +1,129 @@
-# Azure OpenAI Chat Frontend
+# 🌱 Climate Action Assistant
 
-A classic chat user interface that can be used to send messages to an OpenAI API and receive responses. 
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyour-username%2Fclimate-action-assistant%2Fmain%2Finfra%2Fazuredeploy.json)
 
-This application is frontend application implemented with [Lit](https://lit.dev/), consisting of multiple LitElements that can be used to interact with the Azure OpenAI API.
+A conversational web application that helps users take meaningful climate action, powered by Azure OpenAI. Get personalized eco-friendly advice, track your progress, and discover practical steps to fight climate change.
 
+## 🌟 Why This Project?
 
-[![Open in GitHub Codespaces](https://img.shields.io/static/v1?style=for-the-badge&label=GitHub+Codespaces&message=Open&color=brightgreen&logo=github)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=782482632&machine=standardLinux32gb&devcontainer_path=.devcontainer%2Fdevcontainer.json&location=WestUs2)
-[![Open in Remote - Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/Azure-Samples/azure-openai-chat-frontend)
+Climate change can feel overwhelming. Many people want to help but don't know where to start or how their individual actions can make a difference. This assistant provides:
+
+- 🌍 Natural conversation interface for climate-related advice
+- ♻️ Personalized action plans based on user interests
+- 📊 Progress tracking and impact visualization
+- 🏆 Achievement system to encourage sustainable habits
+- 🔍 Debug and restyle features for customization
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js LTS (v16+)
+- Azure subscription
+- Azure OpenAI Service deployed
+
+### Local Development
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/climate-action-assistant.git
+   cd climate-action-assistant
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment variables**
+   Create a `.env` file in the `backend` directory with your Azure OpenAI credentials:
+   ```
+   AZURE_OPENAI_ENDPOINT=your-endpoint-url
+   AZURE_OPENAI_API_KEY=your-api-key
+   AZURE_OPENAI_DEPLOYMENT=your-deployment-name
+   AZURE_OPENAI_API_VERSION=2023-07-01-preview
+   AZURE_OPENAI_API_TYPE=azure
+   ```
+
+4. **Start the development server**
+   ```bash
+   # Start frontend
+   npm start
+   
+   # In a separate terminal, start the backend
+   cd backend
+   npm install
+   node server.js
+   ```
+
+5. **Open in browser**
+   Visit `http://localhost:8000` to see the application in action.
+
+## 🛠️ Features
+
+- **Climate-Focused Chat**
+  - Get personalized advice on reducing your carbon footprint
+  - Learn about sustainable practices
+  - Get answers to climate-related questions
+
+- **Progress Tracking**
+  - Track your eco-friendly actions
+  - Visualize your impact over time
+  - Earn badges for sustainable habits
+
+- **Customization**
+  - Adjust the UI theme to match your brand
+  - Modify prompts and responses
+  - Add new climate action categories
+
+## 🚀 Deployment
+
+### Deploy to Azure
+
+1. **Using Azure Developer CLI (azd)**
+   ```bash
+   # Install Azure Developer CLI
+   winget install -e --id Microsoft.Azure.Developer.Cli
+   
+   # Initialize and deploy
+   azd up
+   ```
+
+2. **Manual Deployment**
+   - Deploy the frontend to Azure Static Web Apps
+   - Deploy the backend to Azure App Service or Azure Functions
+   - Configure CORS and environment variables
+
+## 🛠 Customization
+
+### Update Branding
+- **Logo**: Replace `src/svg/branding/brand-logo.svg`
+- **Colors**: Modify `src/styles/chat-component.ts`
+- **Content**: Update prompts in `src/config/global-config.js`
+
+### Add New Features
+1. Create new components in `src/components/`
+2. Add new API endpoints in `backend/server.js`
+3. Update the UI in `src/chat-component.ts`
+
+## 🤝 Contributing
+
+We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## 📚 Resources
+
+- [Azure OpenAI Documentation](https://learn.microsoft.com/en-us/azure/ai-services/openai/)
+- [Lit Documentation](https://lit.dev/docs/)
+- [Azure Static Web Apps](https://learn.microsoft.com/en-us/azure/static-web-apps/)
 
 ## Features
 

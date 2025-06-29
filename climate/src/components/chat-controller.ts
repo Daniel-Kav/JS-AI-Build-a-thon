@@ -130,15 +130,16 @@ export class ChatController implements ReactiveController {
       await updateChatWithMessageOrChunk(response, true);
     } else {
       // non-streamed response
-      const generatedResponse = (response as BotResponse).choices[0].message;
-      const processedText = processText(generatedResponse.content, [citations, followingSteps, followupQuestions]);
+      const choice = (response as BotResponse).choices[0];
+      const content = choice?.message?.content || choice?.text || '';
+      const processedText = processText(content, [citations, followingSteps, followupQuestions]);
       const messageToUpdate = processedText.replacedText;
       // Push all lists coming from processText to the corresponding arrays
       citations.push(...(processedText.arrays[0] as unknown as Citation[]));
       followingSteps.push(...(processedText.arrays[1] as string[]));
       followupQuestions.push(...(processedText.arrays[2] as string[]));
-      thoughts = generatedResponse.context?.thoughts ?? '';
-      dataPoints = generatedResponse.context?.data_points ?? [];
+      thoughts = choice?.message?.context?.thoughts ?? '';
+      dataPoints = choice?.message?.context?.data_points ?? [];
 
       await updateChatWithMessageOrChunk(messageToUpdate, false);
     }
@@ -159,18 +160,39 @@ export class ChatController implements ReactiveController {
         this.isAwaitingResponse = true;
         this.processingMessage = undefined;
 
-        const response = (await getAPIResponse(requestOptions, httpOptions)) as BotResponse;
+        // Disable streaming for now to simplify the response handling
+        const responseOptions = { ...httpOptions, stream: false };
+        
+        const response = (await getAPIResponse(requestOptions, responseOptions)) as BotResponse;
         this.isAwaitingResponse = false;
 
-        await this.processResponse(response, false, httpOptions.stream);
+        // Process the response without streaming
+        await this.processResponse(response, false, false);
       } catch (error_: any) {
+        console.error('Error in generateAnswer:', error_);
         const error = error_ as ChatResponseError;
+        
+        // Extract error message from different possible locations
+        let errorMessage = 'An unexpected error occurred. Please try again.';
+        
+        if (error?.message) {
+          errorMessage = error.message;
+        } else if (error_?.response?.data?.error?.message) {
+          errorMessage = error_.response.data.error.message;
+        } else if (typeof error_ === 'string') {
+          errorMessage = error_;
+        }
+        
         const chatError = {
-          message: error?.code === 400 ? globalConfig.INVALID_REQUEST_ERROR : globalConfig.API_ERROR_MESSAGE,
+          message: errorMessage,
+          code: error?.code || 'UNKNOWN_ERROR',
+          details: error?.details || {}
         };
 
+        console.error('Chat error:', chatError);
+
         if (!this.processingMessage) {
-          // add a empty message to the chat thread to display the error
+          // Add an empty message to the chat thread to display the error
           await this.processResponse('', false, false);
         }
 

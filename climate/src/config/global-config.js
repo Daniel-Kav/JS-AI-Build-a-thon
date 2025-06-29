@@ -8,12 +8,12 @@ const globalConfig = {
   // This are the chat bubbles that will be displayed in the chat
   CHAT_MESSAGES: [],
   // This are the labels for the chat button and input
-  CHAT_BUTTON_LABEL_TEXT: 'Ask Support',
-  CHAT_CANCEL_BUTTON_LABEL_TEXT: 'Cancel Generation',
+  CHAT_BUTTON_LABEL_TEXT: 'Ask Climate Assistant',
+  CHAT_CANCEL_BUTTON_LABEL_TEXT: 'Cancel',
   CHAT_VOICE_BUTTON_LABEL_TEXT: 'Voice input',
-  CHAT_VOICE_REC_BUTTON_LABEL_TEXT: 'Listening to voice input',
-  CHAT_INPUT_PLACEHOLDER: 'Type your question, eg. "How to search and book rentals?"',
-  USER_IS_BOT: 'Support Assistant',
+  CHAT_VOICE_REC_BUTTON_LABEL_TEXT: 'Listening...',
+  CHAT_INPUT_PLACEHOLDER: 'Type your climate question, e.g. "How can I reduce my carbon footprint?"',
+  USER_IS_BOT: 'Climate Action Assistant',
   RESET_BUTTON_LABEL_TEXT: 'X',
   RESET_BUTTON_TITLE_TEXT: 'Reset current question',
   RESET_CHAT_BUTTON_TITLE: 'Reset chat',
@@ -40,7 +40,7 @@ const globalConfig = {
   // All these should come from persistence config
   BRANDING_URL: '#',
   BRANDING_LOGO_ALT: 'Brand Logo',
-  BRANDING_HEADLINE: 'Welcome to the Support Assistant of our Brand',
+  BRANDING_HEADLINE: 'Welcome to the Climate Action Assistant! Get personalized eco-friendly advice.',
   SHOW_CHAT_HISTORY_LABEL: 'Show Chat History',
   HIDE_CHAT_HISTORY_LABEL: 'Hide Chat History',
   CHAT_MAX_COUNT_TAG: '{MAX_CHAT_HISTORY}',
@@ -48,19 +48,15 @@ const globalConfig = {
 };
 
 const teaserListTexts = {
-  TEASER_CTA_LABEL: 'Ask now',
-  HEADING_CHAT: 'Chat with our support team',
-  HEADING_ASK: 'Ask a question',
+  TEASER_CTA_LABEL: 'Take action now',
+  HEADING_CHAT: 'Chat with the Climate Action Assistant',
+  HEADING_ASK: 'Ask a climate question',
   DEFAULT_PROMPTS: [
-    {
-      description: 'How to search and book rentals?',
-    },
-    {
-      description: 'What is the refund policy?',
-    },
-    {
-      description: 'How to contact a representative?',
-    },
+    { description: 'What are 3 easy ways to live more sustainably?' },
+    { description: 'How can I reduce my home energy use?' },
+    { description: 'What is my carbon footprint and how can I lower it?' },
+    { description: 'How can I get involved in local climate action?' },
+    { description: 'What foods are best for the planet?' },
   ],
 };
 
@@ -78,7 +74,7 @@ const requestOptions = {
 
 const chatHttpOptions = {
   // API URL for development purposes
-  url: 'http://localhost:3000',
+  url: 'http://localhost:3001',
   method: 'POST',
   stream: true,
 };

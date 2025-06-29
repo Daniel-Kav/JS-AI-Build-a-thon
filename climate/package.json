@@ -18,14 +18,15 @@
     "build:lib": "IS_LIB=true vite build",
     "watch": "vite build --watch --minify false",
     "preview": "vite preview",
-    "prepare": "npm run build -s"
+    "prepare": "npm run build -s",
+    "start:backend": "node backend/server.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
     "dompurify": "^3.0.6",
     "lit": "^2.8.0",
-    "marked": "^9.1.5"
+    "marked": "^9.1.6"
   },
   "devDependencies": {
     "@playwright/test": "^1.43.0",
