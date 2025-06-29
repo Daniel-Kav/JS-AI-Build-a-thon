@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environmentName": {
+      "value": "${AZURE_ENV_NAME}"
+    },
+    "resourceGroupName": {
+      "value": "${AZURE_RESOURCE_GROUP}"
+    },
+    "location": {
+      "value": "${AZURE_LOCATION}"
+    },
+    "principalId": {
+      "value": "${AZURE_PRINCIPAL_ID}"
+    },
+    "createRoleForUser": {
+      "value": "${CREATE_ROLE_FOR_USER=true}"
+    },
+    "openAiLocation": {
+      "value": "${AZURE_OPENAI_LOCATION=swedencentral}"
+    },
+    "openAiApiVersion": {
+      "value": "${AZURE_OPENAI_API_VERSION=2024-02-15-preview}"
+    },
+    "webappLocation": {
+      "value": "${AZURE_WEBAPP_LOCATION=eastus2}"
+    },
+    "isContinuousDeployment": {
+      "value": "${CI=false}"
+    },
+    "assistantId": {
+      "value": "${ASSISTANT_ID}"
+    },
+    "azureDeploymentName": {
+      "value": "${AZURE_DEPLOYMENT_NAME=gpt-35-turbo}"
+    },
+    "OPENAI_FUNCTION_CALLING_SKIP_SEND_EMAIL": {
+      "value": "${OPENAI_FUNCTION_CALLING_SKIP_SEND_EMAIL=true}"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+name: azure-openai-assistant-javascript@1.0.0
+metadata:
+  template: azure-openai-assistant-javascript
+services:
+  webapp:
+    project: ./src
+    dist: ../dist
+    language: js
+    host: staticwebapp
+    hooks:
+      predeploy:
+        windows:
+          shell: pwsh
+          run: Export-ModuleMember -Variable API_URL && npm run build
+        posix:
+          shell: sh
+          run: export API_URL && npm run build
+  api:
+    project: ./api
+    language: js
+    host: function
+
+hooks:
+  postprovision:
+    windows:
+      shell: pwsh
+      run: azd env get-values > api/.env
+    posix:
+      shell: sh
+      run: azd env get-values > api/.env
